@@ -1,37 +1,6 @@
 //<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>
 @import "nullstyle.scss";
 //====================================================
-//<ПЕРЕМЕННЫЕ>
-$minw: 320;
-$maxw: 1100;//изменить в соответствии с макетом!
-$md1: 991.98;
-$md2: 780;
-$md3: 767.98;
-$md4: 575.98;
-$md5: 479.98;
-$md6: 426;
-$md7: 375;
-//====================================================
-//<МИКСИНЫ>
-@mixin flexbox() {display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;}
-@mixin flexorder($fz) {-webkit-order: $fz;-moz-order: $fz;order: $fz;}
-//====================================================
-//<ОСНОВНАЯ СЕТКА>
-.container {
-	max-width: $maxw+px;
-	margin: 0 auto;
-	width: 100%;
-	@media (max-width: 1200px) {
-		max-width: 900px;
-	}
-	@media (max-width: $md1+px) {
-		max-width: none;
-		padding: 0px 40px;
-	}
-	@media (max-width: $md6+px) {
-		padding: 0px 20px;
-	}
-}
 .wrapper {
 	max-width: 600px;
 	margin: 0 auto;
@@ -39,44 +8,42 @@ $md7: 375;
 .filter {
 	padding: 20px;
 	box-shadow: 5px 5px 10px #ccc;
+
+	&__title {
+		font-size: 24px;
+		margin-bottom: 20px;
+	}
+	&__form {
+		margin-bottom: 10px;
+	}
+	.form__input {
+		width: 100%;
+		background-color: white;
+		background-image: url('../img/search.svg');
+		background-position: 10px 10px;
+		background-repeat: no-repeat;
+		border: 1px solid #ddd;
+		padding: 12px 20px 12px 40px;
+	}
+	.table,
+	th,
+	td {
+		border: 1px solid #ddd;
+	  	border-collapse: collapse;
+	}
+	th,
+	td {
+		padding: 10px;
+	}
+	tr:hover {
+		background-color: #e2e2e2;
+	}
+	.table {
+		width: 100%;
+		&__heading {
+			background-color: #f1f1f1;
+		}
+	}
 }
-.filter__title {
-	font-size: 24px;
-	margin-bottom: 20px;
-}
-.filter__form {
-	margin-bottom: 10px;
-}
-.form {}
-.form__input {
-	width: 100%;
-	background-color: white;
-	background-image: url('../img/search.svg');
-	background-position: 10px 10px;
-	background-repeat: no-repeat;
-	border: 1px solid #ddd;
-	padding: 12px 20px 12px 40px;
-}
-.table,
-th,
-td {
-	border: 1px solid #ddd;
-  	border-collapse: collapse;
-}
-th,
-td {
-	padding: 10px;
-}
-tr:hover {
-	background-color: #e2e2e2;
-}
-.table {
-	width: 100%;
-}
-.table__heading {
-	background-color: #f1f1f1;
-	th {}
-}
-.table__row {
-	td {}
-}
+
+
